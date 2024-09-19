@@ -12,7 +12,6 @@ const config = {
   prefix: "",
   theme: {
   	container: {
-  		center: 'true',
   		padding: {
   			DEFAULT: '1rem',
   			sm: '2rem',
