@@ -117,9 +117,7 @@ const config = {
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'slide-in': 'slideIn 8000ms ease-in forwards',
   			'slide-InY': 'slideInY 3000ms ease-in forwards',
-  			'slide-out': 'slideOut 5000ms ease-in forwards',
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'slide-out': 'slideOut 5000ms ease-in forwards'
   		},
   		animationDelay: {
   			'0': '0ms',
