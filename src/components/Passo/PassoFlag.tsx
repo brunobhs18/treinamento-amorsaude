@@ -26,7 +26,7 @@ export function PassoFlag() {
     }
 
     return (
-        <div className={`relative inset-0 flex justify-center items-center border-2 ${a} ${b}`}>
+        <div className={`relative inset-0 flex justify-center items-center border-2 text-[1.1vw] ${a} ${b}`}>
             <p dangerouslySetInnerHTML={{__html: text}}></p>
         </div>
     );

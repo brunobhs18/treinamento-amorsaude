@@ -12,7 +12,6 @@ const config = {
   prefix: "",
   theme: {
   	container: {
-  		center: 'true',
   		padding: {
   			DEFAULT: '1rem',
   			sm: '2rem',
@@ -109,22 +108,6 @@ const config = {
   					transform: 'translateX(-15rem)'
   				}
   			},
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
   		},
   		translate: {
   			full: '-100vw'
@@ -135,8 +118,6 @@ const config = {
   			'slide-in': 'slideIn 8000ms ease-in forwards',
   			'slide-InY': 'slideInY 3000ms ease-in forwards',
   			'slide-out': 'slideOut 5000ms ease-in forwards',
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		animationDelay: {
   			'0': '0ms',

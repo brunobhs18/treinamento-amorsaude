@@ -28,6 +28,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import { AlertDialog, AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
 import { AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 
 export default function AtendimentoVideos() {
@@ -110,45 +111,47 @@ export default function AtendimentoVideos() {
     console.log(a)
     return (
         <div className="relative grid grid- grid-cols-[1fr_3fr_1fr] w-screen h-screen">
-            <img src="/capivara.gif" className="absolute -z-10 w-40 h-40 mt-40 translate-x-full animate-slide-in delay-1000 repeat-infinite" />
-            <img src="/alien.gif" className="absolute -z-10 w-40 h-40 mt-96 translate-x-full animate-slide-out repeat-infinite" />
-            <img src="/astronauta.gif" className="absolute -z-10 w-40 h-40 ml-[5rem] translate-y-full animate-slide-InY repeat-infinite" />
+            <img src="/capivara.gif" className="absolute -z-10 w-[10%] h-[20%] mt-[10%] translate-x-full animate-slide-in delay-1000 repeat-infinite" />
+            <img src="/alien.gif" className="absolute -z-10 w-[10%] h-[20%] mt-[30%] translate-x-full animate-slide-out repeat-infinite" />
+            <img src="/astronauta.gif" className="absolute -z-10 w-[10%] h-[20%] ml-[10%] translate-y-full animate-slide-InY repeat-infinite" />
             <div className="flex justify-center items-center"><Button className="rounded-full w-14 h-14" onClick={rmvCount}><MoveLeft></MoveLeft></Button>     </div>
             <div className="flex flex-col h-screen bg-slate-50 shadow-blue-950/25 shadow-md">
-                {count === 3 ? (
-                    <div className="flex flex-col justify-center max-w-max">
-                        <div className="flex flex-col m-8 gap-8">
-                            <h1 className="font-bold text-2xl">Questão 1 - Verificando mensagem do BOT</h1>
-                            <p>Quando você entrou no ambiente cVortex (amorsaude-treinamento.cvortex.com, entrar com o usuário e senha passado) qual foi a primeira mensagem enviada pelo bot no caso que já estava aberto ?</p>
-                            <p>Segue exemplo da imagem abaixo:</p>
-                            <img src="/mensagem bot.png" className="w-[55%] h-[60%]" alt="Imagem ilustrativa de mensagem do bot" />
+                <ScrollArea>
+                    {count === 3 ? (
+                        <div className="flex flex-col justify-center max-w-max">
+                            <div className="flex flex-col m-8 gap-8">
+                                <h1 className="font-bold text-2xl">Questão 1 - Verificando mensagem do BOT</h1>
+                                <p>Quando você entrou no ambiente cVortex (amorsaude-treinamento.cvortex.com, entrar com o usuário e senha passado) qual foi a primeira mensagem enviada pelo bot no caso que já estava aberto ?</p>
+                                <p>Segue exemplo da imagem abaixo:</p>
+                                <img src="/mensagem bot.png" className="w-[55%] h-[60%]" alt="Imagem ilustrativa de mensagem do bot" />
+                            </div>
+                            <div className="flex flex-col p-5 justify-center gap-2">
+                                <form name="form" onSubmit={Submit}>
+                                    <input placeholder="Resposta" name="Question1" type="text" required className="p-2 w-[70%] shadow-sm mr-[5%]" />
+                                    <AlertDialog>
+                                        <AlertDialogTrigger asChild>
+                                            <Button type="submit" className="w-[10%]">Enviar</Button>
+                                        </AlertDialogTrigger>
+                                        <AlertDialogContent>
+                                            <AlertDialogHeader>
+                                                <AlertDialogTitle>Resposta Enviada!</AlertDialogTitle>
+                                                <AlertDialogDescription>
+                                                    Para continuar clique na seta a direita e siga com o seu treinamento.
+                                                    A qualquer momento pode clicar na seta a esquerda para visualizar novamente o conteúdo!
+                                                </AlertDialogDescription>
+                                            </AlertDialogHeader>
+                                            <AlertDialogFooter>
+                                                <AlertDialogAction>Continue</AlertDialogAction>
+                                            </AlertDialogFooter>
+                                        </AlertDialogContent>
+                                    </AlertDialog>
+                                </form>
+                            </div>
                         </div>
-                        <div className="flex flex-col p-5 justify-center gap-2">
-                            <form name="form" onSubmit={Submit}>
-                                <input placeholder="Resposta" name="Question1" type="text" required className="p-2 w-[70%] shadow-sm mr-[5%]" />
-                                <AlertDialog>
-                                    <AlertDialogTrigger asChild>
-                                        <Button type="submit" className="w-[10%]">Enviar</Button>
-                                    </AlertDialogTrigger>
-                                    <AlertDialogContent>
-                                        <AlertDialogHeader>
-                                            <AlertDialogTitle>Resposta Enviada!</AlertDialogTitle>
-                                            <AlertDialogDescription>
-                                                Para continuar clique na seta a direita e siga com o seu treinamento.
-                                                A qualquer momento pode clicar na seta a esquerda para visualizar novamente o conteúdo!
-                                            </AlertDialogDescription>
-                                        </AlertDialogHeader>
-                                        <AlertDialogFooter>
-                                            <AlertDialogAction>Continue</AlertDialogAction>
-                                        </AlertDialogFooter>
-                                    </AlertDialogContent>
-                                </AlertDialog>
-                            </form>
-                        </div>
-                    </div>
-                ) : (
-                    <div className="flex-1" dangerouslySetInnerHTML={{ __html: a }}></div>
-                )}
+                    ) : (
+                        <div className="flex-1" dangerouslySetInnerHTML={{ __html: a }}></div>
+                    )}
+                </ScrollArea>
                 <div className="flex-none object-bottom py-4 text-center text-sm text-muted-foreground">
                     Página {count} de 8
                 </div>
@@ -160,10 +163,22 @@ export default function AtendimentoVideos() {
                 </SheetTrigger>
                 <SheetContent side={"left"}>
                     <div className="flex flex-col">
-                        <Link href="/">Inicio</Link>
-                        <Link href="/atendimentop">
-                             Atendimento Passo a Passo
-                        </Link>
+                        <Accordion type="single">
+                            <AccordionItem value="item-1">
+                                <div className="pt-3 pb-3">
+                                    <Link href="/">Inicio</Link>
+                                </div>
+                            </AccordionItem>
+                        </Accordion>
+                        <Accordion type="single">
+                            <AccordionItem value="item-1"> 
+                                <div className="pt-3 pb-3">
+                                    <Link href="/atendimentop">
+                                         Atendimento Passo a Passo
+                                    </Link>
+                                </div>
+                            </AccordionItem>
+                        </Accordion>
                         <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">
                                 <AccordionTrigger>
