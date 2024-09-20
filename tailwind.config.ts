@@ -107,7 +107,11 @@ const config = {
   				'100%': {
   					transform: 'translateX(-15rem)'
   				}
+<<<<<<< HEAD
   			},
+=======
+  			},  			
+>>>>>>> d811d42aa29b89995392821a6b7966fdd2afca2c
   		},
   		translate: {
   			full: '-100vw'
@@ -117,7 +121,11 @@ const config = {
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'slide-in': 'slideIn 8000ms ease-in forwards',
   			'slide-InY': 'slideInY 3000ms ease-in forwards',
+<<<<<<< HEAD
   			'slide-out': 'slideOut 5000ms ease-in forwards',
+=======
+  			'slide-out': 'slideOut 5000ms ease-in forwards'
+>>>>>>> d811d42aa29b89995392821a6b7966fdd2afca2c
   		},
   		animationDelay: {
   			'0': '0ms',
