@@ -4,7 +4,11 @@ import autoprefixer from 'autoprefixer';
 const config = {
   plugins: {
     tailwindcss: {},
+<<<<<<< HEAD
     autoprefixer: {}
+=======
+    autoprefixer: {},    
+>>>>>>> d5559edd7da9f25327b5d77efde44f5fa935aa33
   },
 };
 
